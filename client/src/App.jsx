@@ -15,7 +15,7 @@ function App() {
     setIsModalOpen(true);
   }
 
-  const handleCloseNoteDetail = (id) => {
+  const handleCloseNoteDetail = () => {
     setIsModalOpen(false);
     setSelectedNoteId(null);
   }
@@ -23,7 +23,7 @@ function App() {
   return (
     <>
       <NoteForm />
-      <NoteList onSelectNote={setSelectedNoteId} />
+      <NoteList onSelectNote={handleOpenNoteDetail} />
 
       {isModalOpen && (
         <Modal onClose={handleCloseNoteDetail}>
